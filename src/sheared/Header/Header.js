@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
 
     const handleLogout = () => {
-        // logOut();
+        logOut();
     }
 
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/login'>Login</Link></li>
-        <li><Link to='/register'>Register</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
-        {/* {user?.uid ?
 
+        {user?.uid ?
             <>
-
-                <li><Link to='' onClick={handleLogout}>Sign Out</Link></li>
+                <li><Link to='/login' onClick={handleLogout}>LogOut</Link></li>
             </>
             :
             <>
-
                 <li><Link to='/login'>Login</Link></li>
             </>
-        } */}
+
+        }
+
     </React.Fragment>
 
 
@@ -38,7 +38,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Doctor-portals</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Product-resale</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

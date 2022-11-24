@@ -1,0 +1,22 @@
+[
+    {
+        "id": "01",
+        "Brand_name":"Luxury car",
+        "image":"https://graphicsfamily.com/wp-content/uploads/edd/2022/01/Luxury-Brand-Logo-scaled.jpg"
+       
+        
+        
+    },
+    {
+        "id": "02",
+        "Brand_name":"Electic Car",
+        "image":"https://cdn.standardmedia.co.ke/images/wysiwyg/images/NNU2DIUlJ4bNKQviJugTU3Qk0vEoUEt0rfqBGC8B.jpg"
+
+    },
+    {
+        "id": "03",
+        "Brand_name":"Microbus",
+        "image":"https://cdn.vectorstock.com/i/preview-1x/97/78/minibus-van-mini-bus-flat-icon-vector-21269778.jpg"
+
+    }
+]
