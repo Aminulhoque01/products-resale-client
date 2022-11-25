@@ -74,8 +74,8 @@ const Register = () => {
 
                                 <button className="btn">Register</button>
                             </form>
-                            <p>New to Doctors portal <Link to='/login' className='text-primary'>YOU Have An Account</Link></p>
                             <div className="divider">OR</div>
+                            <p>New to Doctors portal <Link to='/login' className='text-primary'>YOU Have An Account</Link></p>
                            
                         </div>
                     </div>

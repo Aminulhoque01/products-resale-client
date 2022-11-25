@@ -4,7 +4,10 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import DashboardLayout from "../layout/Dashboardlayout/DashboardLayout";
 import Main from "../layout/Main/Main";
+import AddProducts from "../pages/Dashboard/AddProducts/AddProducts";
 import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
+import SellerProduct from "../pages/Dashboard/Dashboard/SellerProduct/SellerProduct";
+import MyOrders from "../pages/Dashboard/MyOrders/MyOrders";
 import SingleCategory from "../pages/singleCategory/SingleCategory";
 
 import ErrorPage from "../sheared/ErrorPage/ErrorPage";
@@ -44,8 +47,16 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'/dashboard',
-                element:<Dashboard></Dashboard>
-            }
+                element:<MyOrders></MyOrders>
+            },
+            {
+                path:'/dashboard/my products',
+                element:<AddProducts></AddProducts>
+            },
+            {
+                path:'/dashboard/my_sell_products',
+                element:<SellerProduct></SellerProduct>
+            },
         ]
     }
 ])
