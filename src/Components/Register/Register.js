@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast';
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signupError, setSignupError] = useState('');
-    const {createUser} = useContext(AuthContext);
+    const {createUser,updateUser} = useContext(AuthContext);
 
     const handleRegister = (data) => {
         console.log(data);
@@ -17,6 +17,10 @@ const Register = () => {
             const user = result.user;
             console.log(user);
             toast.success('SuccessFull user Created');
+            const userInfo ={
+                displayName : data.name,
+            }
+            updateUser(userInfo)
         })
         .catch(err=>{
             console.error(err)
@@ -46,7 +50,7 @@ const Register = () => {
                                 </div>
                                 <div className="form-control w-full max-w-xs">
                                     <label className="label"><span className="label-text">Email</span> </label>
-                                    <input type="text"
+                                    <input type="email"
                                         {...register("email", {
                                             required: "Email Address is required"
                                         })}

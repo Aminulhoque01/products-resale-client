@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -9,8 +9,18 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [loginError, setLoginError] = useState('');
     const { loginUser, googleSignIn } = useContext(AuthContext);
+    // const [loginUserEmail, setLoginUserEmail]= useState('');
+    // const [token] = useToken(loginUserEmail)
+    
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname|| '/' ;
 
     const googleProvider = new GoogleAuthProvider();
+    // if(token){
+    //     navigate(from,{replace:true});
+    // }
 
     const handleLogin = (data) => {
         console.log(data);
@@ -19,7 +29,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast.success('SuccessFull user login')
+                toast.success('SuccessFull user login');
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error);
