@@ -12,13 +12,13 @@ const AddProducts = () => {
         const form = event.target;
         const items = form.items.value;
         const price = form.price.value;
-        const name = form.name.value;
         const description = form.description.value;
         const phone = form.phone.value;
         const location = form.location.value;
         const url = form.url.value;
         const used = form.used.value;
         const category = form.category.value;
+        const sell  = form.sell.value;
 
         const AddProducts = {
             name: items,
@@ -28,7 +28,8 @@ const AddProducts = () => {
             phone,
             location,
             image_url:url,
-            used
+            used,
+            buy_price:sell,
            
         }
         fetch('http://localhost:5000/addProducts',{
@@ -62,7 +63,10 @@ const AddProducts = () => {
                 <input type="text" name='category'  placeholder="Your product category_id (01 or 02 or 03)"  className="input w-full input-bordered" />
                 <br />
                 <br />
-                <input type="text" name='price'   placeholder="Your product price" className="input w-full input-bordered" />
+                <input type="text" name='price'   placeholder="Your product buy price" className="input w-full input-bordered" />
+                <br />
+                <br />
+                <input type="text" name='sell'   placeholder="Your product sell price" className="input w-full input-bordered" />
                 <br />
                 <br />
                 <input name='description' type="text"   placeholder="Your product description" className="input w-full input-bordered" />

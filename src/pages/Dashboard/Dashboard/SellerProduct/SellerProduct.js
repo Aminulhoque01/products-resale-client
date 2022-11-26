@@ -5,7 +5,7 @@ import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import ConfirmationModal from '../../../../sheared/ConfirmationModal/ConfirmationModal';
 
 const SellerProduct = () => {
-    const { user } = useContext(AuthContext);
+    const { user,loader } = useContext(AuthContext);
     const [deletingProduct, setDeletingProduct] = useState(null);
 
     const closeModal=()=>{
@@ -16,7 +16,7 @@ const SellerProduct = () => {
 
     const url = `http://localhost:5000/addProducts?email=${user?.email}`
 
-    const { data: addProducts = [] ,refetch} = useQuery({
+    const { data: addProducts = [] ,refetch,isLoading} = useQuery({
         queryKey: ['addProducts', user?.email],
         queryFn: async () => {
             const res = await fetch(url);
@@ -24,22 +24,29 @@ const SellerProduct = () => {
             return data;
         }
     })
+    if(loader){
+        return <progress className="progress w-56"></progress>
+    }
 
     const handleDeleteProduct=(product)=>{
         fetch(`http://localhost:5000/addProducts/${product._id}`,{
             method:'DELETE',
-            // headers:{
-            //     c
-            // }
+            headers:{
+               'content-type':'application/json'
+            }
         })
         .then(res=> res.json())
         .then(data=>{
-            if(data.deleteCount> 0){
+            if(data.deletedCount > 0){
                 refetch();
-                toast.success('deleting products')
+                toast.success(' successful deleting products')
                 console.log(data);
             }
         })
+    }
+
+    if(isLoading){
+        return <isLoading></isLoading>
     }
 
     return (

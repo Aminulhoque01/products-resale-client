@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const CategoryCar = ({ category,setProducts }) => {
-    const { name, sell_price,buy_price, image_url,used,location } = category;
+    const { name, sell_price,buy_price, image_url,used,location,phone } = category;
     // const {user} = useContext(AuthContext);
     return (
         <div className='p-10 bg-neutral'>
@@ -13,6 +13,7 @@ const CategoryCar = ({ category,setProducts }) => {
                     <p className="card-title text-1xl font-bold ">Buy price: {buy_price}</p>
                     <p className="card-title text-1xl font-bold ">Sell price: {sell_price}</p>
                     <p className="card-title text-1xl">i am using {used}</p>
+                    <p className="card-title text-1xl">my phone number: {phone}</p>
                     <p className="card-title ">Location: {location}</p>
                     <div className="card-actions">
                         
