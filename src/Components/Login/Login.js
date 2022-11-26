@@ -84,10 +84,19 @@ const Login = () => {
                                     <div className="form-control w-full max-w-xs">
                                         <label className="label"><span className="label-text">select now</span></label>
 
-                                        <select {...register("category")}>
+                                        <select {...register("category",{
+
+                                           
+                                           value:"Admin",
+                                            value:"Seller user",
+                                            value:"Normal user ",
+                                            
+                                        }
+                                        )}>
                                             <option value="">Select...</option>
-                                            <option value="A">Seller user</option>
-                                            <option value="B">Normal user </option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Seller user">Seller user</option>
+                                            <option value="Normal user ">Normal user </option>
                                         </select>
 
                                     </div>
