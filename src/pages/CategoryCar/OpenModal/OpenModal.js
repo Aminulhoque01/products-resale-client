@@ -61,7 +61,7 @@ const OpenModal = ({ products, setProducts }) => {
                         <input type="text" name='items' defaultValue={name} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
-                        <input type="text" name='price' defaultValue={`${sell_price}`} disabled className="input w-full input-bordered" />
+                        <input type="text" name='price' defaultValue={sell_price} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
                         <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered pt-5" />

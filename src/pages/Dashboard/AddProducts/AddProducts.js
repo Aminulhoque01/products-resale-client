@@ -44,6 +44,7 @@ const AddProducts = () => {
             console.log(data);
             if(data.acknowledged){
                 toast.success('successful your product add')
+                form.reset('')
             }
         })
        

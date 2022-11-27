@@ -11,8 +11,8 @@ const CategoryCar = ({ category,setProducts }) => {
                 <figure className='p-5 rounded'><img src={image_url} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold">{name}</h2>
-                    <p className="card-title text-1xl font-bold ">Buy price: {buy_price}</p>
-                    <p className="card-title text-1xl font-bold ">Sell price: {sell_price}</p>
+                    <p className="card-title text-1xl font-bold ">Buy price: {buy_price}$</p>
+                    <p className="card-title text-1xl font-bold ">Sell price: {sell_price}$</p>
                     <p className="card-title text-1xl">i am using {used}</p>
                     <p className="card-title text-1xl">my phone number: {phone}</p>
                     <p className="card-title ">Location: {location}</p>

@@ -3,8 +3,8 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import toast from 'react-hot-toast';
 
 const CheckoutForm = ({booking}) => {
-    const {email, _id, itemsPrice,name} = booking;
-    console.log(itemsPrice);
+    const {email, _id,itemsPrice,name} = booking;
+    // console.log(itemsPrice);
 
     const stripe = useStripe();
     const elements = useElements();
