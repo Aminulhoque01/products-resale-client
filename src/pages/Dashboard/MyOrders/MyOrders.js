@@ -1,5 +1,5 @@
 import { async } from '@firebase/util';
-import { useQueries, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
@@ -28,6 +28,7 @@ const MyOrders = () => {
                     <thead>
                         <tr>
                             <th></th>
+                            <th>products image</th>
                             <th>products Name</th>
                             <th>products Price</th>
                             <th>Buyer Name</th>
@@ -42,6 +43,11 @@ const MyOrders = () => {
                        {
                         bookings.map((booking ,i)=> <tr key={booking._id}>
                             <th>{i+1}</th>
+                            <th><div className="avatar">
+                                    <div className="w-24 rounded">
+                                        <img src={booking.image_url} alt=''/>
+                                    </div>
+                                </div></th>
                             <td>{booking.itemsName}</td>
                             <td>{booking.itemsPrice}</td>
                             <td>{booking.name}</td>

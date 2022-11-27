@@ -49,13 +49,14 @@ export const router = createBrowserRouter([
     {
         path:'/dashboard',
         element:<PrivetRout><DashboardLayout></DashboardLayout></PrivetRout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/dashboard',
                 element:<MyOrders></MyOrders>
             },
             {
-                path:'/dashboard/my products',
+                path:'/dashboard/my-products',
                 element:<AddProducts></AddProducts>
             },
             {
@@ -64,7 +65,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/payment/:id',
-                element:<Payment></Payment>
+                element:<Payment></Payment>,
+                loader:({params})=> fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
     }

@@ -18,6 +18,7 @@ const OpenModal = ({ products, setProducts }) => {
 
         const booking = {
             itemsName: items,
+            
             itemsPrice: price,
             name,
             email,
@@ -37,7 +38,10 @@ const OpenModal = ({ products, setProducts }) => {
                 console.log(data);
                 if (data.acknowledged) {
                     setProducts(null);
-                    toast.success('successfully booking')
+                    toast.success('successfully booking');
+
+                }else{
+                    toast.error(data.message)
                 }
 
             })
@@ -51,13 +55,13 @@ const OpenModal = ({ products, setProducts }) => {
             <input type="checkbox" id="open-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-
+                <label htmlFor="open-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form onSubmit={handleSubmit}>
                         <h3 className="text-lg font-bold">{ }</h3>
-                        <input type="text" name='items' defaultValue={name} className="input w-full input-bordered" />
+                        <input type="text" name='items' defaultValue={name} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
-                        <input type="text" name='price' defaultValue={sell_price} className="input w-full input-bordered" />
+                        <input type="text" name='price' defaultValue={`${sell_price}`} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
                         <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered pt-5" />
@@ -78,9 +82,7 @@ const OpenModal = ({ products, setProducts }) => {
 
 
                     </form>
-                    {/* <div className="modal-action">
-                        <label htmlFor="open-modal" className="btn">Yay!</label>
-                    </div> */}
+                  
                 </div>
             </div>
         </div>

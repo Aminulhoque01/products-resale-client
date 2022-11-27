@@ -6,6 +6,7 @@ const CategoryCar = ({ category,setProducts }) => {
     // const {user} = useContext(AuthContext);
     return (
         <div className='p-10 bg-neutral'>
+            
             <div className="card bg-base-100 shadow-xl">
                 <figure className='p-5 rounded'><img src={image_url} alt="" /></figure>
                 <div className="card-body">
