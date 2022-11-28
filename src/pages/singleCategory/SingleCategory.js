@@ -11,7 +11,7 @@ const SingleCategory = () => {
     // const [brand, setBrand]= useState({});
     
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/product')
+    //     fetch('https://y-sable-eight.vercel.app/product')
     //     .then(res=>res.json())
     //     .then(data=>setBrand(data))
     // },[])

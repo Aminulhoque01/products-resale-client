@@ -14,7 +14,7 @@ const SellerProduct = () => {
 
    
 
-    const url = `http://localhost:5000/addProducts?email=${user?.email}`
+    const url = `https://y-sable-eight.vercel.app/addProducts?email=${user?.email}`
 
     const { data: addProducts = [] ,refetch,isLoading} = useQuery({
         queryKey: ['addProducts', user?.email],
@@ -29,7 +29,7 @@ const SellerProduct = () => {
     }
 
     const handleDeleteProduct=(product)=>{
-        fetch(`http://localhost:5000/addProducts/${product._id}`,{
+        fetch(`https://y-sable-eight.vercel.app/addProducts/${product._id}`,{
             method:'DELETE',
             headers:{
                'content-type':'application/json',

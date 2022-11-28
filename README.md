@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# My project name: products-resale
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Website Link`:  https://products-resale.web.app/
 
-## Available Scripts
+### `Client site Repo Link`: https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-Aminulhoque01
 
-In the project directory, you can run:
+### `Server site Repo Link`: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-Aminulhoque01
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# my site name : products-resale
 
-### `npm test`
+this site react node js mongodb;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## firebase authentication
+this site firebase authentication email and google login
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### nodejs used this site
+mongodb database query all data and post, get, put, update etc.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### client site deploy
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+this site client site deploy in firebase hosting
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### server site deploy
+this site server site deploy vercel 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### `Description` :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I'm Using Tailwind & daisyUi for design part.In the home page firstly I use a navbar  then try to keep slider section.In the home page I'm showing used car categories like electric car , micro buzz, Luxury car.Each category of furniture have different type of cars.Buyer can book er product also can delete. Basically, Resale Product Website. 
+In the dashboard page Selling product, buying product,adding product user can see.All user manage only can admin.
+In blog page just show four question and answer.
 
-### Making a Progressive Web App
+Also, create an error page.!!!   
+And I'm trying to keep a footer part in footer section.
+That's it. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `Features` :
+`1. Route`
+`2. Data Loading`
+`3. Private Route`
+`4. Authentication System`
+`5. CRUD Operation.`
+`6.Toggle Button.`
+`7. Payment System.`
+`8. Admin Route`
 
-### Advanced Configuration
+### `List of Technologies are` :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`1. Tailwind`
+`2. DaisyUi`
+`3. MongoDb`
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

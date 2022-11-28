@@ -33,7 +33,7 @@ const AddProducts = () => {
             buy_price:sell,
            
         }
-        fetch(`http://localhost:5000/addProducts?email=${user?.email}`,{
+        fetch(`https://y-sable-eight.vercel.app/addProducts?email=${user?.email}`,{
             method:'POST',
             headers:{
                 "content-type":"application/json",
