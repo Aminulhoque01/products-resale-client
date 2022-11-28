@@ -11,6 +11,8 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
     const { loginUser, googleSignIn } = useContext(AuthContext);
 
+    const {user} = useContext(AuthContext);
+
     const googleProvider = new GoogleAuthProvider();
     
     const [loginUserEmail, setLoginUserEmail]= useState('');
@@ -34,20 +36,24 @@ const Login = () => {
                 const user = result.user;
                 setLoginUserEmail(data.email);
                 toast.success('SuccessFull user login');
+                
                
             })
             .catch(error => {
                 console.log(error);
             })
-
+         
     }
+
+    
 
     const handleGoogle = () => {
         googleSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast.success('successful google login')
+                toast.success('successful google login');
+                navigate('/')
             })
             .catch(error => {
                 console.log(error);
@@ -91,16 +97,16 @@ const Login = () => {
                                         <select {...register("category",{
 
                                            
-                                           value:"Admin",
+                                            
                                             value:"Seller user",
                                             value:"Normal user ",
                                             
                                         }
                                         )}>
                                             <option value="">Select...</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="Seller user">Seller user</option>
-                                            <option value="Normal user ">Normal user </option>
+                                            
+                                            <option name='seller' value="Seller user">Seller user</option>
+                                            <option  name='buyer' value="buyer user ">Normal user </option>
                                         </select>
 
                                     </div>

@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { verifyBeforeUpdateEmail } from 'firebase/auth';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import ConfirmationModal from '../../../sheared/ConfirmationModal/ConfirmationModal';
@@ -22,7 +23,7 @@ const AllUser = () => {
     })
 
     const handleVerifyBtn = (id) => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`http://localhost:5000/users/${id}`, {
             method: 'PUT',
         })
             .then(res => res.json())
@@ -53,6 +54,21 @@ const AllUser = () => {
             })
     }
 
+    const handleAdminBtn=(email)=>{
+        fetch(`http://localhost:5000/users/admin/${email}`,{
+            method:'PUT',
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            // console.log(data);
+
+            if(data.modifiedCount >0){
+                toast.success(`Make Admin Successfully`)
+                refetch();
+            }
+        })
+    }
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -70,6 +86,7 @@ const AllUser = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>User verify</th>
+                            <th>User Admin</th>
                             <th>Delete user</th>
                         </tr>
                     </thead>
@@ -80,10 +97,14 @@ const AllUser = () => {
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user?.role !== 'verified' &&
-                                    <button onClick={() => handleVerifyBtn(user._id)} className='btn btn-xs btn-info'>User verify</button>
-
-                                }</td>
+                                <td>{user?.rol !=='admin' && 
+                                <button onClick={() => handleAdminBtn(user._id)}  className='btn btn-xs btn-green'>Admin</button>} </td>
+                                
+                                <td>
+                                    {user?.role !== 'verified' &&
+                                     <button onClick={() => handleVerifyBtn(user._id)} className='btn btn-xs btn-info'>User verify</button>
+                                    }
+                                </td>
 
 
                                 <td>

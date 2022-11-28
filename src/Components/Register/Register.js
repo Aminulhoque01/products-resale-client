@@ -6,6 +6,9 @@ import { toast } from 'react-hot-toast';
 import useToken from '../hook/useToken';
 
 const Register = () => {
+
+    
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signupError, setSignupError] = useState('');
     const {createUser,updateUser} = useContext(AuthContext);
@@ -32,17 +35,20 @@ const Register = () => {
             updateUser(userInfo)
             .then(()=>{
                 saveUser(data.name, data.email)
-               
-
+                
+                
             })
             .catch(err => console.log(err))
         })
         .catch(error=>{
             console.error(error)
             setSignupError(error.message)
-        })
-    }
+        });
 
+        
+    }
+   
+   
 
     const saveUser =(name,email)=>{
         const user ={name,email};
@@ -57,6 +63,8 @@ const Register = () => {
         .then(data=>{
             setCreatedUserEmail(email)
         })
+
+        
     }
 
     
@@ -101,6 +109,8 @@ const Register = () => {
                                         className='input input-bordered w-full' />
                                     {errors.password && <p role="alert" className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
+
+                               
 
                                 {signupError && <p className='text red-600'>{signupError}</p>}
 

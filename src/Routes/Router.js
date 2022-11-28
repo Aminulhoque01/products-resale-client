@@ -13,6 +13,7 @@ import MyOrders from "../pages/Dashboard/MyOrders/MyOrders";
 import SingleCategory from "../pages/singleCategory/SingleCategory";
 
 import ErrorPage from "../sheared/ErrorPage/ErrorPage";
+import AdminRoutes from "./AdminRoutes/AdminRoutes";
 import PrivetRout from "./PrivetRout/PrivetRout";
 
 
@@ -66,7 +67,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/all-user',
-                element:<AllUser></AllUser>,
+                element:<AdminRoutes><AllUser></AllUser></AdminRoutes>,
+                // element:<AllUser></AllUser>
                
             },
             {
