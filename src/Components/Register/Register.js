@@ -3,12 +3,21 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useToken from '../hook/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signupError, setSignupError] = useState('');
     const {createUser,updateUser} = useContext(AuthContext);
     const Navigate = useNavigate();
+
+    const [createUserEmail, setCreatedUserEmail]= useState('');
+    const [token] = useToken(createUserEmail);
+
+    if(token){
+        Navigate('/')
+    }
+
     const handleRegister = (data) => {
         
         setSignupError(' ');
@@ -46,10 +55,11 @@ const Register = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
-            Navigate('/');
+            setCreatedUserEmail(email)
         })
     }
+
+    
 
     return (
         <div className="hero min-h-screen bg-base-content">

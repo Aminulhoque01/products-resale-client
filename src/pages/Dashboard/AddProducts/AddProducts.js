@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 const AddProducts = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const{user} =useContext(AuthContext)
 
     const handleAdd = (event) => {
         event.preventDefault();
@@ -32,10 +33,11 @@ const AddProducts = () => {
             buy_price:sell,
            
         }
-        fetch('http://localhost:5000/addProducts',{
+        fetch(`http://localhost:5000/addProducts?email=${user?.email}`,{
             method:'POST',
             headers:{
-                "content-type":"application/json"
+                "content-type":"application/json",
+                authorization:`bearer ${localStorage.getItem('accessToken')}`
             },
             body:JSON.stringify(AddProducts)
         })

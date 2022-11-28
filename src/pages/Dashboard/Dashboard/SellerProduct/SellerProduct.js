@@ -32,7 +32,8 @@ const SellerProduct = () => {
         fetch(`http://localhost:5000/addProducts/${product._id}`,{
             method:'DELETE',
             headers:{
-               'content-type':'application/json'
+               'content-type':'application/json',
+                // authorization:`bearer ${localStorage.getItem('accessToken')}`
             }
         })
         .then(res=> res.json())

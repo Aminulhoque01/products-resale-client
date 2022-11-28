@@ -6,6 +6,7 @@ import Register from "../Components/Register/Register";
 import DashboardLayout from "../layout/Dashboardlayout/DashboardLayout";
 import Main from "../layout/Main/Main";
 import AddProducts from "../pages/Dashboard/AddProducts/AddProducts";
+import AllUser from "../pages/Dashboard/Alluser/AllUser";
 import Payment from "../pages/Dashboard/Dashboard/Payment/Payment";
 import SellerProduct from "../pages/Dashboard/Dashboard/SellerProduct/SellerProduct";
 import MyOrders from "../pages/Dashboard/MyOrders/MyOrders";
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/my_sell_products',
                 element:<SellerProduct></SellerProduct>
+            },
+            {
+                path:'/dashboard/all-user',
+                element:<AllUser></AllUser>
             },
             {
                 path:'/dashboard/payment/:id',

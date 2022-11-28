@@ -18,7 +18,7 @@ const OpenModal = ({ products, setProducts }) => {
 
         const booking = {
             itemsName: items,
-            
+
             itemsPrice: price,
             name,
             email,
@@ -29,7 +29,8 @@ const OpenModal = ({ products, setProducts }) => {
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+
             },
             body: JSON.stringify(booking)
         })
@@ -40,7 +41,7 @@ const OpenModal = ({ products, setProducts }) => {
                     setProducts(null);
                     toast.success('successfully booking');
 
-                }else{
+                } else {
                     toast.error(data.message)
                 }
 
@@ -55,9 +56,11 @@ const OpenModal = ({ products, setProducts }) => {
             <input type="checkbox" id="open-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                <label htmlFor="open-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="open-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+
+
                     <form onSubmit={handleSubmit}>
-                        <h3 className="text-lg font-bold">{ }</h3>
+                        
                         <input type="text" name='items' defaultValue={name} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
@@ -82,7 +85,7 @@ const OpenModal = ({ products, setProducts }) => {
 
 
                     </form>
-                  
+
                 </div>
             </div>
         </div>
