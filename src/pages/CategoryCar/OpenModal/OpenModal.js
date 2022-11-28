@@ -4,13 +4,14 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const OpenModal = ({ products, setProducts }) => {
     const { user } = useContext(AuthContext);
-    const { name, sell_price } = products;
+    const { name, sell_price, image_url } = products;
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const items = form.items.value;
         const price = form.price.value;
+        const image_url = form.image_url.value;
         const name = form.name.value;
         const email = form.email.value;
         const phone = form.phone.value;
@@ -18,7 +19,7 @@ const OpenModal = ({ products, setProducts }) => {
 
         const booking = {
             itemsName: items,
-
+            image_url,
             itemsPrice: price,
             name,
             email,
@@ -60,11 +61,14 @@ const OpenModal = ({ products, setProducts }) => {
 
 
                     <form onSubmit={handleSubmit}>
-                        
+
                         <input type="text" name='items' defaultValue={name} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
                         <input type="text" name='price' defaultValue={sell_price} disabled className="input w-full input-bordered" />
+                        <br />
+                        <br />
+                        <input type="text" name='image_url' defaultValue={image_url} disabled className="input w-full input-bordered" />
                         <br />
                         <br />
                         <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered pt-5" />
