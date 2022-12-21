@@ -85,8 +85,8 @@ const AllUser = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>User verify</th>
                             <th>User Admin</th>
+                            <th>User verify</th>
                             <th>Delete user</th>
                         </tr>
                     </thead>

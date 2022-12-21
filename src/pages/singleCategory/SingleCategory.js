@@ -8,15 +8,6 @@ const SingleCategory = () => {
     
     const [products, setProducts] = useState();
 
-    // const [brand, setBrand]= useState({});
-    
-    // useEffect(()=>{
-    //     fetch('https://y-sable-eight.vercel.app/product')
-    //     .then(res=>res.json())
-    //     .then(data=>setBrand(data))
-    // },[])
-    
-    // const [name, setname] = useState(categories)
 
     
 
@@ -25,7 +16,7 @@ const SingleCategory = () => {
         <div className='bg-neutral'>
 
             <div className=' bg-neutral p-10'>
-                {/* <h1 className='text-3xl font-bold text-center text-info mt-5'>{brand[1].Brand_name}</h1> */}
+                
             </div>
 
             <div className='gap-4'>
